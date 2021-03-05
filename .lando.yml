@@ -4,7 +4,7 @@ config:
   composer_version: 1.10.20
   via: 'apache:2.4'
   webroot: web
-  database: 'mysql:5.7'
+  database: mariadb
   drush: ^10
   xdebug: true
 services:
@@ -14,7 +14,7 @@ services:
       - database
     portforward: 1026
   node:
-    type: 'node:14'
+    type: 'node:12'
     build:
       - cd /app && npm install & npm install -g gulp-cli
 tooling:
